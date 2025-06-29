@@ -1,0 +1,144 @@
+.homeWrapper {
+  font-family: sans-serif;
+}
+
+/* Hero */
+.heroSection {
+  background: url('../../Assets/hero-bg.png') center/cover;
+  color: #ffffff;
+display: flex;
+justify-content: center;
+/* align-items: center; */
+  top:0px;
+  width: 100svw;
+  position: relative;
+  height: 692px;
+}
+
+/* .heroOverlay{
+    margin
+} */
+.heroOverlay h1{
+    font-family: "Poppins", sans-serif;
+    margin-top: 80px;
+    font-size: 36px;
+    letter-spacing: 0px;
+    line-height: 135%;
+    font-weight: 700;
+}
+
+.heroOverlay .subHeading{
+    font-family: "inter", sans-serif;
+font-size: 18px;
+letter-spacing: 0px;
+position: relative;
+top: -10px;
+    line-height: 135%;
+    font-weight: 600;
+
+}
+
+
+
+.cardGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 34px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  margin-top: 50px;
+}
+
+
+.ctaButtonParent{
+    margin: 0 auto;
+    margin-top: 40px;
+    background: linear-gradient(to bottom, #3538CD, #C95FDA 150%);
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+  width: 180px;
+  height: 48px;  
+}
+
+
+.ctaButton {
+  background: #101828;
+  width: 178px;
+  height: 46px;
+  font-family: "inter";
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  line-height: 150%;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Phone Preview */
+.phoneSection {
+  padding: 3rem 2rem;
+  color: white;
+  min-height: 1100px;
+}
+
+.phoneSectionTitle{
+    font-weight: 700;
+    color: #000;
+    font-family: "inter";
+    font-size: 36px;
+    line-height: 128%;
+    letter-spacing: 0px;
+    
+}
+
+.phoneContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.phoneImage {
+  width: 300px;
+  transform: rotate(-10deg);
+}
+
+.phoneText h2 span {
+  background: limegreen;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, #060327 70%, #280977);
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.footerLinksText{
+text-decoration: none;
+  color: #fff;
+}
+
+.socials span {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}

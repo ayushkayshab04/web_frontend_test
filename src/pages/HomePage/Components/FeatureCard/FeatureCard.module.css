@@ -1,0 +1,45 @@
+/* src/components/FeatureCard/FeatureCard.module.css */
+.card {
+  background: white;
+  color: black;
+  border-radius: 2px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 205px;
+  height: 210px;
+}
+
+.icon{
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+
+
+
+
+.title {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  top: 5px;
+  line-height: 135%;
+  letter-spacing: 0px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 70%;
+}
+
+.description {
+  font-weight: 500;
+  font-style: italic;
+  position: relative;
+  top:-25px;
+  line-height: 135%;
+  letter-spacing: 0px;
+  font-family: "inter";
+  font-size: 15px;
+  width: 70%;
+  color: #333;
+}
