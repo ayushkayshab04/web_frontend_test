@@ -80,9 +80,11 @@ top: -10px;
 /* Phone Preview */
 .phoneSection {
   padding: 3rem 2rem;
-  color: white;
-  min-height: 1100px;
+  color: black;
+  min-height: 964px;
 }
+
+
 
 .phoneSectionTitle{
     font-weight: 700;
@@ -92,6 +94,14 @@ top: -10px;
     line-height: 128%;
     letter-spacing: 0px;
     
+}
+
+.phoneText{
+  position: relative;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  top:55px
 }
 
 .phoneContainer {
@@ -113,31 +123,138 @@ top: -10px;
   border-radius: 4px;
 }
 
+.CarouselPhoto{
+  position: relative;
+  top: 16px;
+  left: -10px;
+}
+
+.carouselComponent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  min-width:1360px;
+}
+
+.carouselText{
+  width: 570px;
+  text-align: left;
+  position: relative;
+  left: -20px;
+}
+
+.carouselTextHeader{
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.carouselTextHeaderIndex{
+  color: #000;
+  font-family: "inter";
+  font-weight: 700;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7fed1e;
+  padding: 0px 8px;
+  width: 50px;
+  height: 49px;
+}
+.carouselTextHeaderTitle{
+font-family: "inter";
+  font-weight: 700;
+  font-size: 24px;
+}
+
+
+.carouselTextHeaderContent{
+  position: relative;
+  top: -20px;
+  font-family: "Inter";
+font-weight: 400;
+font-size: 17.5px;
+line-height: 153%;
+letter-spacing: 0px;
+
+}
+
 /* Footer */
 .footer {
   background: linear-gradient(to right, #060327 70%, #280977);
+  /* background-color: red; */
   color: white;
   display: flex;
-  justify-content: center;
+  height: 327px;
+  justify-content: space-evenly;
   text-align: center;
-  padding: 2rem;
 }
 
 .footerLinks {
   display: flex;
-  flex-wrap: wrap;
-  width: 30%;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  height: 100%;
+  position: relative;
+  left:-103px;
+  align-items: baseline;
+  width: 30%;
 }
 
 
 .footerLinksText{
 text-decoration: none;
+font-family: "poppins";
+font-size: 14px;
+line-height: 150%;
+width: 25%;
   color: #fff;
+  text-align: left;
+}
+.footerLinksTextBottom{
+  text-decoration: none;
+  font-weight: 500;
+font-family: "poppins";
+font-size: 14px;
+position: relative;
+top: 9px;
+left: 10px;
+line-height: 150%;
+  color: #fff;
+  text-align: left;
 }
 
+.footerLinksTextBottom span{
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.links{
+  display: flex;
+  gap: 40px;
+  width: 496px;
+  flex-wrap: wrap;
+}
+
+.socials{
+  display: flex;
+  position: relative;
+  top: -47px;
+  right: -135px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.iconConatiner{
+  display: flex;
+  gap: 8px;
+  position: relative;
+  top: 12px;
+  left: -42px;
+}
 .socials span {
   margin: 0 0.5rem;
   font-size: 1.2rem;

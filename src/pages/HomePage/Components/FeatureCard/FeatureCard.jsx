@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./FeatureCard.module.css"
-// import icon from '../../../../Assets/Vector.png'
 
 
 

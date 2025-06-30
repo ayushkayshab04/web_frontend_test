@@ -1,35 +1,11 @@
 import React from 'react';
 import Classes from './HomePage.module.css';
 import FeatureCard from './Components/FeatureCard/FeatureCard';
+import { CarouselData, features, icons } from '../../Utils/data';
+
 
 const HomePage = () => {
-  const features = [
-    {
-      title: 'Clear action steps',
-      description: 'Visual and voice instructions for everything you need to do',
-      icon:"Vector.png"
-    },
-    {
-      title: 'Support & control',
-      description: 'Features to connect, seek advice and stay accountable',
-      icon:"users.png"
-    },
-    {
-      title: 'Time & tasks management',
-      description: 'Features to control every step & stay organised effortlessly',
-      icon:"chronometer.png"
-    },
-    {
-      title: 'Progress tracking',
-      description: 'Features to see how far you’ve come and what really works for you',
-      icon:"graph-up.png"
-    },
-    {
-      title: 'Continuous motivation',
-      description: 'Engaging features for you to stay positive and on the right track',
-      icon:"headset-help.png"
-    },
-  ];
+
 
   return (
     <div className={Classes.homeWrapper}>
@@ -67,11 +43,25 @@ const HomePage = () => {
         </h1>
         <div className={Classes.phoneContainer}>
           <div className={Classes.phoneText}>
-            <h2><span>1</span> Your Life. Your Way.</h2>
-            <p>
-              Meet your new best friend – Goalies AQ (Action Guide) – a free virtual assistant designed by you...
-              Take control of your journey and achieve success on your own terms.
-            </p>
+            {CarouselData.map((item,index)=>{
+              return( 
+                <div className={Classes.carouselComponent}>
+                <img className={Classes.CarouselPhoto} src={`./${item.icon}`} />
+                <div className={Classes.carouselText}>
+                  <div className={Classes.carouselTextHeader}>
+                      <div className={Classes.carouselTextHeaderIndex}>
+                        {index}
+                      </div>
+                      <h1 className={Classes.carouselTextHeaderTitle}>
+                        {item.title}
+                      </h1>
+                  </div>
+                  <p className={Classes.carouselTextHeaderContent}>
+                    {item.description}
+                  </p>
+                </div>
+                </div>
+             )})} 
           </div>
         </div>
       </section>
@@ -79,7 +69,7 @@ const HomePage = () => {
       {/* Footer */}
       <footer className={Classes.footer}>
         <div className={Classes.footerLinks}>
-          <div>
+          <div className={Classes.links}>
           <a className={Classes.footerLinksText} href="#">Home</a>
           <a className={Classes.footerLinksText} href="#">For Contributors</a>
           <a className={Classes.footerLinksText} href="#">Blog</a>
@@ -88,13 +78,21 @@ const HomePage = () => {
           <a className={Classes.footerLinksText} href="#">Contact us</a>
           </div>
           <div>
-        <p>© 2025. Goallies is the part of Omnica Pty Ltd. All rights reserved.</p>
+        <p className={Classes.footerLinksTextBottom}>© 2025. Goallies is the part of Omnica Pty Ltd. All rights reserved.</p>
+        <p className={Classes.footerLinksTextBottom}>
+             <span>Privacy Policy</span> and <span>Terms & Conditions</span>
+        </p>
           </div>
         </div>
         <div className={Classes.socials}>
          <p>
           Join us on social media
          </p>
+         <div className={Classes.iconConatiner}>
+            {icons.map((item,index)=>{
+              return<img key={index} src={`./${item.name}`} />
+            })}
+         </div>
         </div>
       </footer>
     </div>
