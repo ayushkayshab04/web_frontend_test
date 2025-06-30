@@ -89,6 +89,7 @@ top: -10px;
 .phoneSectionTitle{
     font-weight: 700;
     color: #000;
+    position: relative;
     font-family: "inter";
     font-size: 36px;
     line-height: 128%;
@@ -96,13 +97,50 @@ top: -10px;
     
 }
 
-.phoneText{
+.phoneText {
   position: relative;
   display: flex;
-  overflow-y: hidden;
   overflow-x: scroll;
-  top:55px
+  overflow-y: hidden;
+  top: 55px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 50%; /* helps with centering */
+  scroll-behavior: smooth; /* optional: adds smooth scroll */
 }
+
+.phoneText::-webkit-scrollbar {
+  display: none;
+}
+.phoneText {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.leftButton{
+  position: relative;
+  left: calc(-1360px/2 - 100px);
+  top: 350px;
+  z-index: 100;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: "Poppins";
+  background-color: transparent;
+  border: none;
+
+}
+
+.rightButton{
+  position: relative;
+  left: calc(1360px/2 + 100px);
+  z-index: 100;
+  top: 350px;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: "Poppins";
+  background-color: transparent;
+  border: none;
+}
+
 
 .phoneContainer {
   display: flex;
@@ -128,14 +166,22 @@ top: -10px;
   top: 16px;
   left: -10px;
 }
-
-.carouselComponent{
+.carouselComponent {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 90px;
-  min-width:1360px;
+  padding-bottom: 2rem;
+  min-width: 100%; /* ensures each item takes full width */
+  scroll-snap-align: center;
 }
+
+.carouselComponent {
+  width: 1360px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
 
 .carouselText{
   width: 570px;

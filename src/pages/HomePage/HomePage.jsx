@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Classes from './HomePage.module.css';
 import FeatureCard from './Components/FeatureCard/FeatureCard';
 import { CarouselData, features, icons } from '../../Utils/data';
 
 
 const HomePage = () => {
+  
+  const carouselRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollToItem = (index) => {
+    const container = carouselRef.current;
+    const item = container.children[index];
+    if (item) {
+      const containerWidth = container.clientWidth;
+      const itemLeft = item.offsetLeft;
+      const itemWidth = item.clientWidth;
+      const scrollLeft = itemLeft - containerWidth / 2 + itemWidth / 2;
+      container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      setCurrentIndex(index);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) scrollToItem(currentIndex - 1);
+  };
+
+  const handleNext = () => {
+    if (currentIndex < CarouselData.length - 1) scrollToItem(currentIndex + 1);
+  };
 
 
   return (
@@ -41,8 +65,16 @@ const HomePage = () => {
           Check out what you’re getting,<br />
           <span>and why it's worth your time</span> 
         </h1>
+         {/* Arrow Buttons */}
+          <button onClick={handlePrev} className={Classes.leftButton} disabled={currentIndex === 0}>
+            {"<"}
+          </button>
+          <button onClick={handleNext} className={Classes.rightButton} disabled={currentIndex === CarouselData.length - 1}>
+            {">"}
+          </button>
+
         <div className={Classes.phoneContainer}>
-          <div className={Classes.phoneText}>
+          <div className={Classes.phoneText} ref={carouselRef}>
             {CarouselData.map((item,index)=>{
               return( 
                 <div className={Classes.carouselComponent}>
@@ -50,7 +82,7 @@ const HomePage = () => {
                 <div className={Classes.carouselText}>
                   <div className={Classes.carouselTextHeader}>
                       <div className={Classes.carouselTextHeaderIndex}>
-                        {index}
+                        {index+1}
                       </div>
                       <h1 className={Classes.carouselTextHeaderTitle}>
                         {item.title}
